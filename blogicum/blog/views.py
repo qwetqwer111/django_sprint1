@@ -1,4 +1,3 @@
-from django.http import Http404
 from django.shortcuts import render
 
 
@@ -51,7 +50,7 @@ ITEM_DIRECTORY = {post["id"]: post for post in posts}
 
 def index(request):
     template = "blog/index.html"
-    context = {"posts":(posts)}
+    context = {"posts": (posts)}
     return render(request, template, context)
 
 
