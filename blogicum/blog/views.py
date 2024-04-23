@@ -57,8 +57,8 @@ def index(request):
 
 def post_detail(request, post_id):
     item = POST_DIRECTORY.get(post_id)
-    if correct_post is None:
-        raise Http404('Такой страницы не существует')
+    if item is None:
+        raise Http404('Страница не найдена')
     template = "blog/detail.html"
     context = {"post": item}
     return render(request, template, context)
